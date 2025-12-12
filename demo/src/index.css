@@ -2,11 +2,31 @@
 @import "dither-plugin";
 
 @font-face {
-  font-family: 'Inter Variable';
+  font-family: 'Pretendard';
   font-style: normal;
-  font-weight: 400 900;
+  font-weight: 400;
   font-display: swap;
-  src: url("/fonts/sans/InterVariable.woff2") format("woff2");
+  src: url("/fonts/sans/Pretendard-Regular.woff2") format("woff2"),
+       url("/fonts/sans/Pretendard-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/sans/Pretendard-Medium.woff2") format("woff2"),
+       url("/fonts/sans/Pretendard-Medium.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/sans/Pretendard-SemiBold.woff2") format("woff2"),
+       url("/fonts/sans/Pretendard-SemiBold.woff") format("woff");
 }
 
 @font-face {
@@ -37,22 +57,18 @@
 }
 
 @theme {
-  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-sans: "Pretendard", system-ui, sans-serif;
   --font-mono: "Favorit Mono", system-ui, monospace;
 }
 
-pre {
-  @apply bg-neutral-100;
-}
-
-code {
-  @apply !font-mono;
-}
-
 body {
-  @apply antialiased;
+  @apply antialiased bg-white dark:bg-black dark:text-white;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply tracking-tight;
+  @apply -tracking-[0.0075em];
+}
+
+p, a {
+  @apply text-[15px];
 }

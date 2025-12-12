@@ -1,4 +1,4 @@
-import { cn } from "../utils/cn"
+import { cn } from "../utils/cn";
 
 export const CopyIcon = ({ className }: { className?: string }) => (
   <svg
@@ -22,7 +22,7 @@ export const CopyIcon = ({ className }: { className?: string }) => (
       strokeLinecap="round"
     />
   </svg>
-)
+);
 
 export const ChevronDownIcon = ({ className }: { className?: string }) => (
   <svg
@@ -41,7 +41,7 @@ export const ChevronDownIcon = ({ className }: { className?: string }) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
 export const StarIcon = ({ className }: { className?: string }) => (
   <svg
@@ -60,7 +60,7 @@ export const StarIcon = ({ className }: { className?: string }) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
 export const GithubIcon = ({ className }: { className?: string }) => (
   <svg
@@ -76,7 +76,7 @@ export const GithubIcon = ({ className }: { className?: string }) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
 export const CodeIcon = ({ className }: { className?: string }) => (
   <svg
@@ -95,7 +95,7 @@ export const CodeIcon = ({ className }: { className?: string }) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
 
 export const ComponentIcon = ({ className }: { className?: string }) => (
   <svg
@@ -131,4 +131,4 @@ export const ComponentIcon = ({ className }: { className?: string }) => (
       strokeLinejoin="round"
     />
   </svg>
-)
+);
