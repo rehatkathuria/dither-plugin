@@ -68,11 +68,20 @@ function App() {
             </a>
           </div>
         </div>
-        <div className="w-full">
-          <h2 className="font-semibold mb-1.5 leading-tight">How to use</h2>
-          <pre className="w-full p-4 tabular-nums bg-neutral-50 dark:bg-neutral-950">
-            {"<div className='dither-sm'>\n  <img src='/images/cat.webp' />\n</div>"}
-          </pre>
+        <div className="w-full space-y-3">
+          <h2 className="font-semibold leading-tight">How to use</h2>
+          <div>
+            <h2 className="text-sm mb-1.5 leading-tight text-neutral-500">Tailwind stylesheet</h2>
+            <pre className="w-full p-4 tabular-nums bg-neutral-50 dark:bg-neutral-950">
+              {"@import 'dither-plugin';"}
+            </pre>
+          </div>
+          <div>
+            <h2 className="text-sm mb-1.5 leading-tight text-neutral-500">Element classes</h2>
+            <pre className="w-full p-4 tabular-nums bg-neutral-50 dark:bg-neutral-950">
+              {"<div className='dither-sm'>\n  <img src='/images/cat.webp' />\n</div>"}
+            </pre>
+          </div>
         </div>
         <div>
           <h2 className="font-semibold mb-1.5 leading-tight">Example</h2>
