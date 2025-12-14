@@ -1,5 +1,5 @@
 {
-  "name": "dither-plugin-demo",
+  "name": "shadow-plugin-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,7 +14,6 @@
     "@tailwindcss/vite": "^4.1.13",
     "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
-    "dither-plugin": "^1.1.1",
     "html2canvas": "^1.4.1",
     "lucide-react": "^0.507.0",
     "react": "^19.1.1",

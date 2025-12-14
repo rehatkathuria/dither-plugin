@@ -1,23 +1,32 @@
 import { cn } from "./utils/cn";
 
+const EXAMPLES: Array<{ label: string; smooth: string; tailwind: string }> = [
+  { label: "xs", smooth: "smooth-shadow-xs", tailwind: "shadow-xs" },
+  { label: "sm", smooth: "smooth-shadow-sm", tailwind: "shadow-sm" },
+  { label: "md", smooth: "smooth-shadow-md", tailwind: "shadow-md" },
+  { label: "-", smooth: "smooth-shadow", tailwind: "shadow" },
+  { label: "lg", smooth: "smooth-shadow-lg", tailwind: "shadow-lg" },
+  { label: "xl", smooth: "smooth-shadow-xl", tailwind: "shadow-xl" },
+];
+
 function App() {
   return (
     <main className="min-h-screen px-4 pt-4">
       <div className="w-full max-w-3xl flex space-y-8 flex-col items-start mx-auto">
         <div className="flex flex-col items-start">
-          <h1 className="mb-1.5 text-lg font-semibold leading-tight">Dither Plugin</h1>
+          <h1 className="mb-1.5 text-lg font-semibold leading-tight">Smooth Shadow Plugin</h1>
           <p className="mb-6 max-w-lg">
-            The dither plugin for TailwindCSS is adding a dither effect to your elements by using
-            simple CSS filters. The plugin is free to use and open-source.
+            A TailwindCSS add-on that provides soft, multi-layered shadows that match Tailwind's
+            shadow scale. Free and open-source.
           </p>
           <div className="gap-1.5 text-balance w-auto max-w-lg flex items-center justify-center">
             <div className="flex items-center gap-1 w-fit">
               <a
                 target="_blank"
-                href="https://github.com/flornkm/dither-plugin"
+                href="https://github.com/flornkm/shadow-plugin"
                 className={cn(
                   "text-neutral-900 hover:text-black rounded-sm font-medium bg-neutral-100 hover:bg-neutral-200 transition-all px-2.5 py-1 h-7 flex items-center",
-                  "dark:text-white dark:hover:text-white dark:bg-neutral-800 dark:hover:bg-neutral-700",
+                  "dark:text-white dark:hover:text-white dark:bg-neutral-800 dark:hover:bg-neutral-700"
                 )}
               >
                 <svg
@@ -38,7 +47,7 @@ function App() {
                 href="https://twitter.com/flornkm"
                 className={cn(
                   "text-neutral-700 hover:text-black rounded-sm font-medium bg-neutral-100 hover:bg-neutral-200 transition-all px-2.5 py-1 h-7 flex items-center gap-2",
-                  "dark:text-white dark:hover:text-white dark:bg-neutral-800 dark:hover:bg-neutral-700",
+                  "dark:text-white dark:hover:text-white dark:bg-neutral-800 dark:hover:bg-neutral-700"
                 )}
               >
                 <svg
@@ -58,10 +67,10 @@ function App() {
             <div className="shrink-0 w-px h-5 bg-neutral-200 dark:bg-neutral-800" />
             <a
               target="_blank"
-              href="https://www.npmjs.com/package/dither-plugin"
+              href="https://www.npmjs.com/package/shadow-plugin"
               className={cn(
                 "text-white hover:text-white rounded-sm font-medium bg-black hover:bg-neutral-700 transition-all px-2.5 py-1 h-7 flex items-center gap-2",
-                "dark:text-black dark:hover:text-black dark:bg-white dark:hover:bg-neutral-200",
+                "dark:text-black dark:hover:text-black dark:bg-white dark:hover:bg-neutral-200"
               )}
             >
               Download
@@ -72,34 +81,68 @@ function App() {
           <h2 className="font-semibold leading-tight">How to use</h2>
           <div>
             <h2 className="text-sm mb-1.5 leading-tight text-neutral-500">Tailwind stylesheet</h2>
-            <pre className="w-full p-4 tabular-nums bg-neutral-50 dark:bg-neutral-950">
-              {"@import 'dither-plugin';"}
+            <pre className="w-full p-4 tabular-nums bg-neutral-50 dark:bg-neutral-950 whitespace-pre-wrap break-words">
+              {"@import 'shadow-plugin';"}
             </pre>
           </div>
           <div>
             <h2 className="text-sm mb-1.5 leading-tight text-neutral-500">Element classes</h2>
-            <pre className="w-full p-4 tabular-nums bg-neutral-50 dark:bg-neutral-950">
-              {"<div className='dither-sm'>\n  <img src='/images/cat.webp' />\n</div>"}
+            <pre className="w-full p-4 tabular-nums bg-neutral-50 dark:bg-neutral-950 whitespace-pre-wrap break-words">
+              {"<div className='smooth-shadow-md shadow-black/50' />"}
             </pre>
           </div>
         </div>
-        <div>
-          <h2 className="font-semibold mb-1.5 leading-tight">Example</h2>
-          <div className="relative size-72 overflow-hidden">
-            <div className="dark:invert">
-              <div className="w-full dither">
-                <img
-                  src="/images/cat.webp"
-                  alt="Flower"
-                  className="w-full h-full object-cover object-top dark:invert"
-                />
+        <div className="w-full pb-8">
+          <div className="flex w-full justify-between items-center">
+            <h2 className="font-semibold mb-1.5 leading-tight">Example</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-xs w-24 leading-tight text-neutral-500">Smooth</p>
+              </div>
+              <div>
+                <p className="text-xs w-24 leading-tight text-neutral-500">Default</p>
               </div>
             </div>
-            <img
-              src="/images/cat.webp"
-              alt="Flower"
-              className="w-full h-full absolute inset-0 object-cover object-top mask mask-r-to-65% mask-r-from-0%"
-            />
+          </div>
+          <div className="mb-8">
+            {EXAMPLES.map(({ label, smooth, tailwind }, index) => {
+              const isLast = index === EXAMPLES.length - 1;
+              return (
+                <>
+                  <div
+                    key={label}
+                    className={cn(
+                      "flex w-full justify-between items-center py-4 px-5",
+                      !isLast && "overflow-hidden"
+                    )}
+                  >
+                    <h3 className="text-sm leading-tight text-neutral-500">{label}</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <div
+                          className={cn(
+                            "h-8 w-24 bg-white border border-neutral-200 shadow-black/50",
+                            smooth
+                          )}
+                        />
+                      </div>
+                      <div>
+                        <div
+                          className={cn(
+                            "h-8 w-24 bg-white border border-neutral-200 shadow-black/10",
+                            tailwind
+                          )}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  {!isLast && <hr className="w-full h-px text-neutral-200 shrink-0" />}
+                </>
+              );
+            })}
+          </div>
+          <div className="w-full min-h-[512px] bg-neutral-100 relative">
+            <div className="absolute w-96 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white smooth-shadow-md shadow-black/50 rounded-lg" />
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dither.floriankiem.com/sitemap.xml
+Sitemap: https://shadow.floriankiem.com/sitemap.xml
