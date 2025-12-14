@@ -1,27 +1,27 @@
 {
-  "name": "shadow-plugin",
+  "name": "dither-plugin",
   "version": "0.0.0-development",
-  "description": "TailwindCSS plugin for adding nice looking shadows.",
+  "description": "TailwindCSS plugin for adding dither effects.",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/index.css -o ./dist/shadow-plugin.css -m",
+    "build": "npx tailwindcss -i ./src/index.css -o ./dist/dither-plugin.css -m",
     "format": "prettier --write --ignore-unknown .",
     "demo": "open demo/index.html"
   },
-  "exports": "./dist/shadow-plugin.css",
-  "main": "./dist/shadow-plugin.css",
+  "exports": "./dist/dither-plugin.css",
+  "main": "./dist/dither-plugin.css",
   "files": [
     "dist"
   ],
   "keywords": [
-    "shadow",
-    "tailwind shadow",
-    "css shadow",
-    "smooth shadow",
-    "pure css shadow",
+    "dither",
+    "tailwind dither",
+    "css dither",
+    "dither effect",
+    "pure css dither",
     "tailwind pure css plugin",
     "tailwindcss"
   ],
-  "repository": "flornkm/shadow-plugin",
+  "repository": "flornkm/dither-plugin",
   "author": {
     "name": "flornkm",
     "website": "https://floriankiem.com"

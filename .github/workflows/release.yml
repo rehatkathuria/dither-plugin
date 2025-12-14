@@ -73,7 +73,7 @@ jobs:
           EOF
 
                     cp package.json package.json.bak
-                    node -e "let p=require('./package.json'); p.name='@${OWNER_LC}/shadow-plugin'; p.version='${VERSION}'; require('fs').writeFileSync('package.json', JSON.stringify(p,null,2))"
+                    node -e "let p=require('./package.json'); p.name='@${OWNER_LC}/dither-plugin'; p.version='${VERSION}'; require('fs').writeFileSync('package.json', JSON.stringify(p,null,2))"
 
                     npm publish --registry=https://npm.pkg.github.com --userconfig=.npmrc
 

@@ -1,34 +1,43 @@
-# TailwindCSS Smooth Shadow Plugin
+![masked dither image of a flower](https://dither.floriankiem.com/images/banner.webp)
 
-Utilities that extend Tailwind's shadow scale with a multi-layer, soft “smooth” shadow.
+# TailwindCSS Dither Plugin (Safari Compatible)
+
+A TailwindCSS plugin that provides Safari-compatible dither effects without relying on SVG filters making dithering easy, performant, and accessible.
 
 ## Usage
 
-Install and import the plugin stylesheet:
+To start using the `dither-plugin`, install with the following command:
 
 ```
-npm install shadow-plugin
+npm install dither-plugin
 ```
+
+Then, add the plugin to your `index.css` file where you also reference TailwindCSS:
 
 ```css
 @import "tailwindcss";
-@import "shadow-plugin";
+@import "dither-plugin";
 ```
 
-Apply a shadow using the provided utilities:
+To activate it, add a `<div>` around the elements that should be dithered and add the `dither` class to it.
 
-```html
-<div class="smooth-shadow"></div>
-<div class="smooth-shadow-sm"></div>
-<div class="smooth-shadow-xl"></div>
+```tsx
+<div className="dither">
+  <Component />
+</div>
 ```
 
-You can also set the shadow color via tokens or current color:
+You can play around with different sizes, e.g. `dither-xl`.
 
-```html
-<div class="smooth-shadow-xl shadow-red-500"></div>
-<div class="text-neutral-900 smooth-shadow-lg"></div>
-```
+Note that the class won't be applied when added directly to an img or video element, as these elements don't support `::after` pseudo-elements.
+
+It's as easy as that! You can play around with it.
+
+## Documentation and examples
+
+A documentation and examples can be found [here](https://dither.floriankiem.com/).
+
+Feel free to follow me on Twitter [@flornkm](https://twitter.com/flornkm) or on [GitHub](https://github.com/flornkm).
 
 ## License
 
